@@ -1,0 +1,814 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+}
+
+:root {
+    --bg-color: #000000;
+    --second-bg-color: #161616;
+    --text-color: #fff;
+    --man-color: #a70d0d;
+}
+
+/* HTML and body styles */
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    font-family: "Poppins";
+    color: var(--text-color);
+}
+
+/* Scrollbar styles */
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--man-color);
+}
+
+/* Header styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3rem 9%;
+    background: rgb(0, 0, 0);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 3rem;
+    color: var(--man-color);
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.5s ease;
+
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--man-color);
+    border-bottom: 3px solid var(--man-color);
+}
+
+/* Menu icon for mobile */
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--man-color);
+    display: none;
+}
+
+/* Media Queries for mobile */
+@media (max-width: 995px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 40;
+        border-left: 3px solid var(--man-color);
+        border-bottom: 3px solid var(--man-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem;
+        background-color: var(--second-bg-color);
+        border-top: 0.1rem solid rgba(0, 0, 0, 0.4);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .navbar a:hover,
+    .navbar.a.active {
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--man-color);
+    }
+}
+
+/* Section styles */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    background: var(--bg-color);
+}
+
+.home .home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+span {
+    color: var(--man-color);
+}
+
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.home-img {
+    border-radius: 50%;
+}
+
+.home-img img {
+    position: relative;
+    width: 32vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--man-color);
+    cursor: pointer;
+}
+
+.home-img img:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 25px var(--man-color));
+}
+
+.home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Social Icons */
+.social-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2 solid var(--man-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--man-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3s ease;
+}
+
+.social-icon a:hover {
+    color: white;
+    transform: scale(1.3) translateY(-5px);
+    background: var(--man-color);
+    box-shadow: 0 0 25px var(--man-color);
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--bg-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--man-color);
+    border: 2px solid var(--man-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--man-color);
+    color: var(--text-color);
+    box-shadow: 0 0 25px var(--man-color);
+}
+
+/* Typing Text Animation */
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span {
+    position: relative;
+}
+
+.typing-text span::before {
+    content: "Software Developer";
+    color: var(--man-color);
+    animation: words 20s infinite;
+}
+
+.typing-text span::after {
+    content: '';
+    background: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 800px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+
+/* Keyframe Animations */
+@keyframes cursor {
+    to {
+        border-left: 3px solid var(--man-color);
+    }
+}
+
+@keyframes words {
+    0%, 20% {
+        content: "Web Developer";
+    }
+    21%, 40% {
+        content: "Software Developer";
+    }
+    41%, 60% {
+        content: "Web Designer";
+    }
+    61%, 80% {
+        content: "Photographer";
+    }
+    81%, 100% {
+        content: "Youtuber";
+    }
+}
+
+@keyframes typing {
+    0%, 100% {
+        width: 0;
+    }
+    5%, 20%, 25%, 40%, 45%, 60%, 65%, 80%, 85% {
+        width: calc(100% + 8px);
+    }
+    10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+        width: 0;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1000px) {
+    .home {
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 995px) {
+    .home {
+        flex-direction: column;
+        margin: 5rem 4rem;
+    }
+    .home .home-content h3 {
+        font-size: 2.5rem;
+    }
+    .home-content h1 {
+        font-size: 5rem;
+    }
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+}
+
+
+
+
+
+
+
+/* Service Section */
+.service {
+    background: var(--second-bg-color);
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-box {
+    background-color: var(--man-color);
+    height: 150px;
+    border-radius: 20%;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 80%;
+}
+
+.service-box:hover {
+    background: rgb(0, 0, 0);
+    color: var(--man-color);
+    transform: scale(1.3);
+    border: 3px solid var(--man-color);
+}
+
+.service-box .service-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    max-height: 100px;
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+}
+   
+
+
+
+
+
+.skills {
+    background: var(--man-color);
+}
+.skills .container {
+    background: rgb(116, 45, 45);
+    color: var(--text-color);
+    border-radius: 0.1rem;
+    padding: 1%;
+    width: 30;
+    margin: 30;
+    margin-top: 0.5rem;
+}
+.skills .container .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 1.8rem;
+
+}
+.skills .container .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 1rem;
+    background: var(--man-color);
+    transition: 0.5 ease;
+    cursor: pointer;
+
+}
+.skills .container .bar:hover {
+    box-shadow: rgb(0, 0, 0);
+    transform: scale(1.03);
+
+}
+.skills .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.skills .container .bar .info span{
+    font: 2rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+@media screen and (max-width:600px) {
+    .skills .container {
+        margin: 0;
+        padding: 0; 
+    }
+    .skills .container .row {
+        grid-template-columns: repeat(2, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+    .skills .container {
+        margin-top: 5px;
+        width: 100%;
+    }
+}/* بخش اسکیل‌ها */
+.skills {
+    padding: 50px 0;
+}
+
+.skills .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.skills .bar {
+    width: 150px; /* عرض ثابت برای هر اسکیل */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.skills .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.skills img {
+    width: 80px; /* اندازه یکسان برای تمام تصاویر */
+    height: 80px; /* ارتفاع یکسان برای تمام تصاویر */
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.skills span {
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
+
+
+
+
+/* تنظیمات کلی تحصیلات */
+.education {
+    background: var(--second-bg-color);
+}
+
+.education .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* خط مرکزی تایم‌لاین */
+.education .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: rgb(49, 34, 34);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1; /* تنظیم z-index به -1 برای قرار گرفتن در پس‌زمینه */
+}
+
+/* کانتینر هر بخش (چپ و راست) */
+.education .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    margin-bottom: 20px; /* فاصله بین بخش‌ها */
+    transition: all 0.3s ease; /* اضافه کردن افکت روان */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* سایه برای جلوه بیشتر */
+    border-radius: 15px; /* گوشه‌های گرد برای کانتینر */
+}
+
+/* اضافه کردن دایره در زیر هر بخش */
+.education .container::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--man-color); /* رنگ دایره */
+    top: 100%; /* موقعیت دایره در زیر محتوا */
+    left: 50%;
+    transform: translateX(-50%); /* وسط‌چین کردن دایره */
+    border-radius: 50%; /* گوشه‌های گرد برای دایره */
+    z-index: 100; /* قرار دادن دایره در بالا */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* سایه برای دایره */
+}
+
+/* افکت hover برای دکمه‌های تایم‌لاین */
+.education .container:hover {
+    background-color: black; /* تغییر رنگ پس‌زمینه به سیاه */
+    transform: translateY(-5px); /* پیش آمدن بخش */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* سایه برجسته‌تر */
+}
+
+/* تنظیمات بخش‌های چپ و راست */
+.education .left {
+    left: 0;
+}
+
+.education .right {
+    left: 50%;
+}
+
+/* خط‌هایی که از هر بخش به سمت مرکز کشیده می‌شود */
+.education .left::before, 
+.education .right::before {
+    content: '';
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    border: medium solid var(--man-color);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--man-color);
+}
+
+/* تنظیمات محتوا در هر بخش تحصیلی */
+.education .content {
+    background: var(--man-color);
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* سایه برای محتوا */
+}
+
+/* تنظیمات عنوان داخل هر بخش */
+.education .content .tag {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: black;
+    padding-top: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+/* تنظیمات توضیحات داخل هر بخش */
+.education .content .desc {
+    margin-left: 1.5rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Media query برای صفحه‌های کوچک (موبایل) */
+@media screen and (max-width: 600px) {
+    .education .timeline {
+        margin-top: 2rem;
+    }
+
+    /* تغییر در موقعیت خط مرکزی در صفحه‌های کوچک */
+    .education .timeline::after {
+        left: 31px;
+    }
+
+    /* تغییرات در ابعاد و فاصله‌های کانتینرها */
+    .education .container {
+        width: 100%;
+        padding-left: 8rem;
+        padding-right: 2rem;
+    }
+
+    /* تنظیم اندازه دایره‌ها در صفحات کوچک‌تر */
+    .education .container::after {
+        font-size: 2.2rem;
+    }
+
+    /* تنظیم موقعیت دایره‌ها در صفحات کوچک */
+    .education .left::after,
+    .education .right::after {
+        left: 15px;
+    }
+
+    /* تغییر موقعیت بخش راست برای صفحات کوچک */
+    .education .right {
+        left: 0;
+    }
+}
+
+/* دکمه ارسال پیام (send message) */
+.contact form .btn {
+    background-color: #f501; /* رنگ پس‌زمینه دکمه */
+    color: #fff; /* رنگ متن دکمه */
+    padding: 1rem 2rem; /* فضاهای داخلی دکمه */
+    border: none; /* حذف خط مرزی */
+    border-radius: 50%; /* دایره‌ای کردن دکمه */
+    font-size: 1.5rem; /* اندازه فونت دکمه */
+    cursor: pointer; /* تغییر اشاره‌گر موس به دکمه */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* سایه دکمه */
+    transition: all 0.3s ease;
+}
+
+/* افکت hover برای دکمه ارسال پیام */
+.contact form .btn:hover {
+    background-color: black; /* تغییر رنگ دکمه به سیاه */
+    transform: translateY(-4px); /* کمی پیش آمدن دکمه */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* سایه بیشتر دکمه */
+}
+
+/* افکت focus برای دکمه ارسال پیام */
+.contact form .btn:focus {
+    outline: none; /* حذف خط حاشیه */
+}
+
+@media (max-width:895) {
+    .service-container {
+        grid-template-columns: repeat(1,1fr);
+
+    }
+}
+
+
+
+
+
+
+/* استایل عنوان فرم تماس */
+.contact h2 {
+    margin-bottom: 20px;
+    color: rgb(231, 14, 14);
+}
+
+/* استایل کلی فرم */
+.contact form {
+    max-width: 100%;
+    margin: 1rem;
+    margin-bottom: 9%;
+    text-align: center;
+}
+
+/* استایل جعبه ورودی‌ها */
+.contact form .input-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    position: relative; /* برای اضافه کردن مربع در پایین */
+}
+
+/* استایل برای فیلدهای ورودی و textarea */
+.contact form .input-box input,
+.contact form textarea {
+    width: 500px; /* اندازه عرض */
+    padding: 1.1rem; /* پدینگ */
+    font-size: 2rem;
+    color: var(--text-color); /* رنگ متن */
+    background: var(--bg-color); /* رنگ پس‌زمینه */
+    border-radius: 1px;
+    border: 2px solid var(--man-color); /* رنگ مرز */
+    margin: 1rem;
+    resize: none; /* غیر فعال کردن تغییر اندازه */
+    position: relative; /* برای قرار دادن مربع در زیر */
+}
+
+/* اضافه کردن مربع در زیر هر فیلد */
+.contact form .input-box input::after,
+.contact form textarea::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--man-color); /* رنگ مربع */
+    top: 100%; /* مربع در زیر فیلد قرار می‌گیرد */
+    left: 50%;
+    transform: translateX(-50%); /* وسط‌چین کردن مربع */
+    border-radius: 5px; /* گوشه‌های گرد */
+    z-index: 100; /* برای نمایش بالاتر مربع */
+}
+
+/* استایل دکمه ارسال */
+.contact form .btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    background-color: var(--man-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact form .btn:hover {
+    background-color: var(--hover-color); /* تغییر رنگ هنگام hover */
+}
+
+
+
+
+
+
+
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px;
+    background-color: var(--man-color);
+}
+footer .social {
+    text-align: center;
+    padding: 25px;
+    color: black;
+
+}
+.footer .social a{
+    font-size: 25px;
+    color: black;
+    border: 2px solid black;
+    width: 42px;
+    height: 42px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+.footer .social a:hover {
+    transform: scale(1.2rem) translateY(-5px);
+    background: black;
+    color: var(--man-color);
+}
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: black;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+.footer ul li a:hover {
+    border-bottom: 3px solid black;
+}
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+footer .copyright {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: black;
+}
+@media(max-width:1285px) {
+    html{
+        font-size: 55%;
+    }
+    .service-container{
+        padding-bottom: 7rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 5rem;
+    }
+}
+@media(max-widthL991px){
+    .header{
+        padding: 2rem 3%;
+    }
+    .selection{
+        padding: 10rem 2% 2rem;
+    }
+    .service {
+        padding-bottom: 7rem;
+    }
+    .footer {
+        padding: 2rem 3%;
+
+    }
+
+}
+
