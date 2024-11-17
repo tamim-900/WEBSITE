@@ -357,10 +357,10 @@ span {
     display: flex;
     flex-direction: column;
     text-align: center;
-    max-height: 100px;
+    max-height: 150px;
     justify-content: center;
     align-items: center;
-    padding: 1px;
+    padding: px;
 }
    
 
